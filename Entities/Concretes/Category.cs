@@ -1,4 +1,4 @@
-﻿using Entities.Abstracts;
+﻿using Core.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Entities.Concretes
 {
-    public class Category : IEntity
+    public class Category:IEntity
     {
         //Çıplak class kalmasın
         public int CategoryId { get; set; }
