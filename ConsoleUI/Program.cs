@@ -21,9 +21,18 @@ static void ProductTest()
 {
     ProductManager productManager = new ProductManager(new EfProductDal());
 
-    foreach (var product in productManager.GetProductDetail())
+    var result = productManager.GetProductDetail();
+
+    if (result.Success == true)
     {
-        Console.WriteLine("Ürün İsmi : " + product.ProductName + " *********Kategori İsmi : " + product.CategoryName);
+        foreach (var product in result.Data)
+        {
+            Console.WriteLine("Ürün İsmi : " + product.ProductName + " *********Kategori İsmi : " + product.CategoryName);
+        }
+    }
+    else
+    {
+        Console.WriteLine(result.Message);
     }
 }
 
